@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/storiesFragment">
+
+    <fragment
+        android:id="@+id/storiesFragment"
+        android:name="com.dicoding.storyapp.ui.main.stories.StoriesFragment"
+        android:label="fragment_stories"
+        tools:layout="@layout/fragment_stories" >
+        <action
+            android:id="@+id/action_storiesFragment_to_storyDetailFragment"
+            app:destination="@id/storyDetailFragment" />
+        <action
+            android:id="@+id/action_storiesFragment_to_addStoryFragment"
+            app:destination="@id/addStoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storyDetailFragment"
+        android:name="com.dicoding.storyapp.ui.main.storyDetail.StoryDetailFragment"
+        android:label="fragment_story_detail"
+        tools:layout="@layout/fragment_story_detail" >
+        <argument
+            android:name="story_id"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStoryFragment"
+        android:name="com.dicoding.storyapp.ui.main.addStory.AddStoryFragment"
+        android:label="fragment_add_story"
+        tools:layout="@layout/fragment_add_story" />
+
+</navigation>
