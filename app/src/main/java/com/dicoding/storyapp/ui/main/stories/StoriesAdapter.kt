@@ -36,7 +36,7 @@ class StoriesAdapter : PagingDataAdapter<ListStoryItem, StoriesAdapter.StoryView
         }
 
         holder.itemView.setOnClickListener {
-            getItem(holder.adapterPosition)?.let { it1 -> onItemClickCallback.onItemClicked(it1) }
+            getItem(position)?.let { it1 -> onItemClickCallback.onItemClicked(it1) }
         }
     }
 
